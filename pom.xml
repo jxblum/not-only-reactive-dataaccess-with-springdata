@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.0.M5</version>
+  </parent>
+
+  <groupId>io.springoneplatform.2017</groupId>
+  <artifactId>not-only-reactive-dataaccess-with-springdata</artifactId>
+  <version>1.0.0.RELEASE</version>
+  <packaging>pom</packaging>
+
+  <name>Not Only Reactive - Data Access with Spring Data</name>
+  <description>
+    Reactive programming is one of the Core themes supported by Spring Framework 5.0 and the other ecosystem projects.
+    Spring Data provides non-blocking, Reactive support that allows Spring applications to go reactive from end to end.
+    Still, more has happened around Spring Data.
+
+    In this session we will cover efforts made towards Reactive data access for those stores supporting this approach.
+    But we will also give an update on recent additions, changes and improvements in Spring Data. Have a detailed look
+    at the supported stores and deep dive into some of their specifics.
+  </description>
+  <url>https://github.com/jxblum/simplifying-apache-geode-with-spring-data</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <comments>
+        Copyright 2017 the original author or authors.
+
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+        implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+      </comments>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Pivotal Software, Inc.</name>
+    <url>http://www.pivotal.io</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>jblum</id>
+      <name>John Blum</name>
+      <email>jblum at pivotal dot io</email>
+      <organization>Pivotal Software, Inc.</organization>
+      <organizationUrl>http://www.spring.io</organizationUrl>
+      <roles>
+        <role>Spring Data Team</role>
+        <role>Spring Data Cassandra Project Lead (Committer)</role>
+        <role>Spring Data GemFire Project Lead (Committer)</role>
+        <role>Spring Data Geode Project Lead (Committer)</role>
+        <role>Spring Session Data GemFire Project Lead (Committer)</role>
+        <role>Spring Session Data Geode Project Lead (Committer)</role>
+        <role>Spring Boot Data GemFire Project Lead (Committer)</role>
+        <role>Spring Boot Data Geode Project Lead (Committer)</role>
+        <role>Apache Geode Committer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>jblum</id>
+      <name>Christoph Strobl</name>
+      <email>cstrobl at pivotal dot io</email>
+      <organization>Pivotal Software, Inc.</organization>
+      <organizationUrl>http://www.spring.io</organizationUrl>
+      <roles>
+        <role>Spring Data Team</role>
+        <role>Spring Data MongoDB Project Lead (Committer)</role>
+        <role>Spring Data Redis Project Lead (Committer)</role>
+        <role>Spring Data Solr Project Lead (Committer)</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <assertj.version>3.8.0</assertj.version>
+    <cp-elements.version>1.0.0.M3</cp-elements.version>
+    <mockito.version>2.12.0</mockito.version>
+    <multithreadedtc.version>1.01</multithreadedtc.version>
+    <spring.version>5.0.2.RELEASE</spring.version>
+    <spring-data-releasetrain.version>Kay-SR2</spring-data-releasetrain.version>
+    <spring-data-cassandra.version>2.0.2.RELEASE</spring-data-cassandra.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>spring-libs-release</id>
+      <name>Spring libs-release Maven Repository</name>
+      <url>https://repo.spring.io/libs-release</url>
+    </repository>
+    <repository>
+      <id>spring-libs-milestone</id>
+      <name>Spring libs-milestone Maven Repository</name>
+      <url>https://repo.spring.io/libs-milestone</url>
+    </repository>
+    <repository>
+      <id>spring-libs-snapshot</id>
+      <name>Spring libs-snapshot Maven Repository</name>
+      <url>https://repo.spring.io/libs-snapshot</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>spring-plugins-release</id>
+      <url>http://repo.spring.io/plugins-release</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.codeprimate</groupId>
+        <artifactId>cp-elements</artifactId>
+        <version>${cp-elements.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-cassandra</artifactId>
+        <version>${spring-data-cassandra.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>edu.umd.cs.mtc</groupId>
+        <artifactId>multithreadedtc</artifactId>
+        <version>${multithreadedtc.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codeprimate</groupId>
+      <artifactId>cp-elements</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-cassandra</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>edu.umd.cs.mtc</groupId>
+      <artifactId>multithreadedtc</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <compilerArgs>
+            <arg>-Xlint:unchecked</arg>
+            <!-- <classpath>${java.home}/lib/tools.jar</classpath> -->
+          </compilerArgs>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <argLine>
+            -Dgemfire.log-level=warning
+          </argLine>
+          <includes>
+            <include>**/*Test.java</include>
+            <include>**/*Tests.java</include>
+          </includes>
+          <reuseForks>false</reuseForks>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
