@@ -14,7 +14,7 @@
   <groupId>io.springoneplatform.2017</groupId>
   <artifactId>not-only-reactive-dataaccess-with-springdata</artifactId>
   <version>1.0.0.RELEASE</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <name>Not Only Reactive - Data Access with Spring Data</name>
   <description>
