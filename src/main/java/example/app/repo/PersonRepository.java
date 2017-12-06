@@ -19,6 +19,6 @@ import example.app.model.Person;
 @SuppressWarnings("all")
 public interface PersonRepository extends CassandraRepository<Person, Long> {
 
-	Slice<Person> findAllSlicedByLastName(String lastName, Pageable pageable);
+	Slice<Person> findAllByLastName(String lastName, Pageable pageable);
 
 }

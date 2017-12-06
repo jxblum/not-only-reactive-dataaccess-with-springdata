@@ -48,7 +48,7 @@ public class CassandraPagingAndSortingRepositoryIntegrationTests {
 
 		List<Person> results = new ArrayList<>();
 
-		Slice<Person> firstPage = this.personRepository.findAllSlicedByLastName("Doe",
+		Slice<Person> firstPage = this.personRepository.findAllByLastName("Doe",
 			CassandraPageRequest.first(4));
 
 		assertThat(firstPage.getNumberOfElements()).isEqualTo(4);
@@ -57,7 +57,7 @@ public class CassandraPagingAndSortingRepositoryIntegrationTests {
 
 		assertThat(firstPage.hasNext()).isTrue();
 
-		Slice<Person> secondPage = this.personRepository.findAllSlicedByLastName("Doe",
+		Slice<Person> secondPage = this.personRepository.findAllByLastName("Doe",
 			firstPage.nextPageable());
 
 		assertThat(secondPage.getNumberOfElements()).isEqualTo(3);
